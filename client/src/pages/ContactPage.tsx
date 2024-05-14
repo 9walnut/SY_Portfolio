@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
 interface ContactPageState {
   name: string;
@@ -6,6 +7,29 @@ interface ContactPageState {
   subject: string;
   message: string;
 }
+
+const ContactContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const InfoContainer = styled.div`
+  flex: 1;
+  margin-right: 20px;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+`;
+
+const FormContainer = styled.div`
+  flex: 2;
+`;
 
 class ContactPage extends Component<{}, ContactPageState> {
   constructor(props: {}) {
@@ -39,13 +63,13 @@ class ContactPage extends Component<{}, ContactPageState> {
 
   render() {
     return (
-      <div>
-        <div style={{ float: "left", marginRight: "20px" }}>
+      <ContactContainer>
+        <InfoContainer>
           <h2>어디사니</h2>
           <p>서울특별시 성북구.</p>
           <p>asdfsafa@Aadsfasdfasfd.com</p>
-        </div>
-        <div style={{ float: "left" }}>
+        </InfoContainer>
+        <FormContainer>
           <h1>Contact Me</h1>
           <form onSubmit={this.handleSubmit}>
             <div>
@@ -95,9 +119,8 @@ class ContactPage extends Component<{}, ContactPageState> {
               <button type="submit">Send</button>
             </div>
           </form>
-        </div>
-        <div style={{ clear: "both" }} />
-      </div>
+        </FormContainer>
+      </ContactContainer>
     );
   }
 }
