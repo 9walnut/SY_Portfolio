@@ -8,7 +8,7 @@ interface NavLinkProps {
 }
 
 const NavbarContainer = styled.nav`
-  background-color: #090808;
+  background-color: #000;
   padding: 20px;
   display: flex;
   justify-content: flex-end;
@@ -36,6 +36,7 @@ const ToggleMenu = styled.div<NavLinkProps>`
   top: 100%;
   right: 0;
   padding: 20px;
+  transition: all 0.3s ease;
   @media (min-width: 769px) {
     display: flex;
     position: static;
@@ -51,12 +52,14 @@ const NavLink = styled(Link)`
   text-decoration: none;
   margin: 10px 0;
   font-size: 18px;
+  transition: color 0.3s;
   @media (min-width: 769px) {
     margin: 0 20px;
   }
 
   &:hover {
     text-decoration: underline;
+    color: #555;
   }
 `;
 
@@ -66,7 +69,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
-        setIsOpen(false); // 화면 너비가 768px 이상일 때는 메뉴를 닫은 상태로 유지합니다.
+        setIsOpen(false);
       }
     };
 
