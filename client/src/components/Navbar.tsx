@@ -8,7 +8,7 @@ interface NavLinkProps {
 }
 
 const NavbarContainer = styled.nav`
-  background-color: #333;
+  background-color: #090808;
   padding: 20px;
   display: flex;
   justify-content: flex-end;

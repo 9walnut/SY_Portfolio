@@ -1,5 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import backgroundImage from "../assets/images/hodu2.jpg";
 
 const HomePageContainer = styled.div`
@@ -26,12 +33,39 @@ const AnimatedText = styled.h1`
   }
 `;
 
+const SocialIconsContainer = styled.div`
+  margin-top: 20px;
+`;
+
+const SocialIcon = styled.a`
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+  &:hover {
+    color: #ccc;
+  }
+`;
+
 const HomePage: React.FC = () => {
   return (
     <HomePageContainer>
       <AnimatedText>Welcome to My Portfolio</AnimatedText>
       <p>Explore my projects and feel free to reach out.</p>
-      {/* 이곳에 추가적인 컴포넌트나 내용을 넣을 수 있습니다. */}
+      <SocialIconsContainer>
+        <SocialIcon href="https://www.facebook.com">
+          <FontAwesomeIcon icon={faFacebook} />
+        </SocialIcon>
+        <SocialIcon href="https://www.instagram.com">
+          <FontAwesomeIcon icon={faInstagram} />
+        </SocialIcon>
+        <SocialIcon href="https://www.twitter.com">
+          <FontAwesomeIcon icon={faTwitter} />
+        </SocialIcon>
+        <SocialIcon href="https://www.linkedin.com">
+          <FontAwesomeIcon icon={faLinkedin} />
+        </SocialIcon>
+      </SocialIconsContainer>
     </HomePageContainer>
   );
 };
