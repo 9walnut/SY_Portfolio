@@ -25,10 +25,59 @@ const InfoContainer = styled.div`
     margin-right: 0;
     margin-bottom: 20px;
   }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
 `;
 
 const FormContainer = styled.div`
   flex: 2;
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    div {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
 `;
 
 class ContactPage extends Component<{}, ContactPageState> {
