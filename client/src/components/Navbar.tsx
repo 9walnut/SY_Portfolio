@@ -11,9 +11,23 @@ const NavbarContainer = styled.nav`
   background-color: #000;
   padding: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   position: relative;
+`;
+
+const BrandLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  @media (max-width: 768px) {
+    margin-right: auto;
+  }
+`;
+
+const MenuContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const MenuIcon = styled.div`
@@ -83,23 +97,26 @@ const Navbar: React.FC = () => {
 
   return (
     <NavbarContainer>
-      <MenuIcon onClick={toggleMenu}>
-        <FaBars />
-      </MenuIcon>
-      <ToggleMenu isOpen={isOpen}>
-        <NavLink to="/" onClick={toggleMenu}>
-          Main
-        </NavLink>
-        <NavLink to="/about" onClick={toggleMenu}>
-          About
-        </NavLink>
-        <NavLink to="/works" onClick={toggleMenu}>
-          Works
-        </NavLink>
-        <NavLink to="/contact" onClick={toggleMenu}>
-          Contact
-        </NavLink>
-      </ToggleMenu>
+      <BrandLink to="/">soyeon</BrandLink>
+      <MenuContainer>
+        <MenuIcon onClick={toggleMenu}>
+          <FaBars />
+        </MenuIcon>
+        <ToggleMenu isOpen={isOpen}>
+          <NavLink to="/" onClick={toggleMenu}>
+            Main
+          </NavLink>
+          <NavLink to="/about" onClick={toggleMenu}>
+            About
+          </NavLink>
+          <NavLink to="/works" onClick={toggleMenu}>
+            Works
+          </NavLink>
+          <NavLink to="/contact" onClick={toggleMenu}>
+            Contact
+          </NavLink>
+        </ToggleMenu>
+      </MenuContainer>
     </NavbarContainer>
   );
 };
