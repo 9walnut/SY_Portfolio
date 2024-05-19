@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 interface ContactPageState {
   name: string;
@@ -11,6 +18,10 @@ interface ContactPageState {
 const ContactContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -20,6 +31,10 @@ const ContactContainer = styled.div`
 const InfoContainer = styled.div`
   flex: 1;
   margin-right: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 768px) {
     margin-right: 0;
@@ -33,6 +48,20 @@ const InfoContainer = styled.div`
 
   p {
     margin-bottom: 5px;
+  }
+`;
+
+const SocialIconsContainer = styled.div`
+  margin-top: 20px;
+`;
+
+const SocialIcon = styled.a`
+  color: #020202;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s;
+  &:hover {
+    color: #020202;
   }
 `;
 
@@ -61,6 +90,11 @@ const FormContainer = styled.div`
         border: 1px solid #ccc;
         border-radius: 5px;
         font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        resize: vertical;
       }
 
       button {
@@ -117,6 +151,20 @@ class ContactPage extends Component<{}, ContactPageState> {
           <h2>어디사니</h2>
           <p>서울특별시 성북구.</p>
           <p>asdfsafa@Aadsfasdfasfd.com</p>
+          <SocialIconsContainer>
+            <SocialIcon href="https://www.facebook.com">
+              <FontAwesomeIcon icon={faFacebook} />
+            </SocialIcon>
+            <SocialIcon href="https://www.instagram.com">
+              <FontAwesomeIcon icon={faInstagram} />
+            </SocialIcon>
+            <SocialIcon href="https://www.twitter.com">
+              <FontAwesomeIcon icon={faTwitter} />
+            </SocialIcon>
+            <SocialIcon href="https://www.linkedin.com">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </SocialIcon>
+          </SocialIconsContainer>
         </InfoContainer>
         <FormContainer>
           <h1>Contact Me</h1>
